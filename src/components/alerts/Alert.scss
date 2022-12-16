@@ -1,0 +1,74 @@
+@import '@scss/theme-variables';
+
+.alert {
+  display: flex;
+  padding: 6px 16px;
+  flex-grow: 1;
+  border-radius: 4px;
+
+  .alert__icon {
+    display: flex;
+    padding: 7px 0;
+    margin-right: 12px;
+    font-size: 22px;
+    opacity: 0.9;
+  }
+
+  .alert__content {
+    padding: 8px 0;
+    min-width: 0;
+    overflow: auto;
+
+    .alert__content-title {
+      line-height: 1.5;
+      margin: 0 0 10px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+
+  &.alert-color-primary {
+    background-color: rgba($primary, 0.15);
+    color: $primary;
+  }
+
+  &.alert-color-secondary {
+    background-color: rgba($secondary, 0.15);
+    color: $secondary;
+  }
+
+  &.alert-color-tertiary {
+    background-color: rgba($tertiary, 0.15);
+    color: $tertiary;
+  }
+
+  &.alert-color-grey {
+    background-color: rgba($grey, 0.15);
+    color: $grey;
+  }
+
+  &.alert-color-grey-light {
+    background-color: rgba($grey-light, 0.15);
+    color: $grey-light;
+  }
+
+  &.alert-color-info {
+    background-color: rgba($info, 0.15);
+    color: $info;
+  }
+
+  &.alert-color-success {
+    background-color: rgba($success, 0.15);
+    color: $success;
+  }
+
+  &.alert-color-warning {
+    background-color: rgba($warning, 0.15);
+    color: $warning;
+  }
+
+  &.alert-color-danger {
+    background-color: rgba($danger, 0.15);
+    color: $danger;
+  }
+}

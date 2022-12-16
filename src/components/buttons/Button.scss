@@ -1,0 +1,90 @@
+@import '@scss/theme-variables';
+
+.btn {
+  display: inline-flex;
+  line-height: 1.75;
+  padding: 6px 16px;
+  border: 0;
+  font-size: 14px;
+  font-weight: 500;
+  min-width: 65px;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  transition:
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.btn-contained {
+  &.btn-primary {
+    background-color: $primary;
+    color: $white;
+
+    &:hover {
+      background-color: darken($primary, 5%);
+    }
+  }
+
+  &.btn-secondary {
+    background-color: $secondary;
+    color: $white;
+
+    &:hover {
+      background-color: darken($secondary, 5%);
+    }
+  }
+
+  &.btn-white {
+    background-color: $white;
+    color: $primary;
+
+    &:hover {
+      background-color: darken($white, 5%);
+    }
+  }
+}
+
+.btn-outlined {
+  &.btn-primary {
+    border: 1px solid $primary;
+    background-color: transparent;
+    color: $primary;
+
+    &:hover {
+      color: darken($primary, 5%);
+      border-color: darken($primary, 5%);
+    }
+  }
+
+  &.btn-secondary {
+    border: 1px solid $secondary;
+    background-color: transparent;
+    color: $secondary;
+
+    &:hover {
+      color: darken($secondary, 5%);
+      border-color: darken($secondary, 5%);
+    }
+  }
+
+  &.btn-white {
+    border: 1px solid $white;
+    background-color: transparent;
+    color: $white;
+
+    &:hover {
+      color: darken($white, 5%);
+      border-color: darken($white, 5%);
+    }
+  }
+}
+
+.btn-circle {
+  border-radius: 100%;
+}

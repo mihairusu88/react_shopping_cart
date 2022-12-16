@@ -1,0 +1,137 @@
+@import '@scss/theme-variables';
+@import '@scss/mixins';
+
+.product-card-variant-1 {
+  background: $white;
+  border-radius: 4px;
+  min-height: 395px;
+
+  .content {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    max-height: 500px;
+
+    .image {
+      display: flex;
+      position: relative;
+      padding: 4px 4px 0;
+      margin-bottom: 10px;
+      flex-shrink: 1;
+      flex-direction: column;
+      overflow: hidden;
+
+      .image__content {
+        display: flex;
+        height: 0;
+        padding-top: 50%;
+        padding-bottom: 50%;
+        background: $grey-light;
+        flex-direction: column;
+        justify-content: center;
+
+        a {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          z-index: 1;
+        }
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          z-index: 2;
+        }
+
+        .image-loading-skeleton {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background-color: $grey-light;
+          overflow: hidden;
+          z-index: 3;
+        
+          &::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transform: translateX(-100%);
+            background-image:
+              linear-gradient(
+                90deg,
+                rgba($white, 0) 0,
+                rgba($white, 0.2) 20%,
+                rgba($white, 0.5) 60%,
+                rgba($white, 0)
+              );
+            animation: shimmer 2s infinite;
+            content: '';
+          }
+        }
+      }
+    }
+
+    .title {
+      line-height: 19px;
+      padding-right: 20px;
+      margin-bottom: 12px;
+      color: $tertiary;
+      font-size: 16px;
+      font-weight: 500;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .description {
+      line-height: 14px;
+      margin-bottom: 12px;
+      color: darken($grey, 15%);
+      font-size: 12px;
+      font-weight: 400;
+      min-height: 42px;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  .actions {
+    display: flex;
+    padding: 0 10px 10px;
+    align-items: center;
+    justify-content: space-between;
+
+    .price {
+      line-height: 19px;
+      color: $primary;
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@include mobile {
+  .product-card-variant-1 {
+    .content {
+      max-height: none;
+    }
+  }
+}

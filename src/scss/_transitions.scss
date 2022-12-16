@@ -1,0 +1,38 @@
+.fade-appear {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.fade-appear-done {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 200ms, transform 200ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 200ms, transform 200ms;
+}
+
+.fade-no-scale-appear {
+  opacity: 0;
+}
+
+.fade-no-scale-appear-done {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+
+.fade-no-scale-exit {
+  opacity: 1;
+}
+
+.fade-no-scale-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}

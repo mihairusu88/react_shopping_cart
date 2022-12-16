@@ -1,0 +1,43 @@
+@import './theme-variables';
+@import './transitions';
+
+:root {
+  line-height: 24px;
+  background-color: $white;
+  color: $black;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: $body;
+  min-height: 100vh;
+}
+
+.app {
+  display: flex;
+}
+
+.container {
+  display: flex;
+  width: 1280px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.page-title {
+  text-align: center;
+}

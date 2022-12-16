@@ -1,0 +1,32 @@
+@import '@scss/mixins';
+
+.quantity-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .btn {
+    height: 30px;
+    width: 40px;
+    min-width: auto;
+  }
+
+  input {
+    padding-right: 0;
+    padding-left: 0;
+    margin: 0 10px;
+    max-width: 60px;
+    text-align: center;
+  }
+}
+
+@include mobile {
+  .quantity-controls {
+    flex-direction: column;
+    align-items: center;
+
+    input {
+      margin: 10px 0;
+    }
+  }
+}

@@ -1,0 +1,75 @@
+@import '@scss/theme-variables';
+
+.input {
+  padding: 5px 10px;
+  border: 1px solid $grey-light;
+  border-radius: 4px;
+  min-height: 30px;
+  outline: none;
+
+  &.input-primary {
+    &:focus {
+      border-color: $primary;
+    }
+  }
+
+  &.input-secondary {
+    &:focus {
+      border-color: $secondary;
+    }
+  }
+
+  &.input-tertiary {
+    &:focus {
+      border-color: $tertiary;
+    }
+  }
+
+  &.input-grey {
+    &:focus {
+      border-color: darken($grey, 10%);
+    }
+  }
+
+  &.input-grey-light {
+    &:focus {
+      border-color: darken($grey-light, 10%);
+    }
+  }
+
+  &.input-black {
+    &:focus {
+      border-color: $black;
+    }
+  }
+
+  &.input-white {
+    &:focus {
+      border-color: darken($white, 10%);
+    }
+  }
+
+  &.input-info {
+    &:focus {
+      border-color: $info;
+    }
+  }
+
+  &.input-success {
+    &:focus {
+      border-color: $success;
+    }
+  }
+
+  &.input-warning {
+    &:focus {
+      border-color: $warning;
+    }
+  }
+
+  &.input-danger {
+    &:focus {
+      border-color: $danger;
+    }
+  }
+}

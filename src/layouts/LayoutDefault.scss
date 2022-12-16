@@ -1,0 +1,9 @@
+.layout-default {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  > .content {
+    padding: 15px 20px;
+  }
+}

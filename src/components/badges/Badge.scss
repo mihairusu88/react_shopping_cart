@@ -1,0 +1,167 @@
+@import '@scss/theme-variables';
+
+.badge {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+
+  .badge__content {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    font-size: 14px;
+  }
+
+  .badge__badge-content {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 20px;
+    line-height: 1;
+    padding: 0 6px;
+    color: $white;
+    font-size: 11px;
+    font-weight: 500;
+    min-width: 20px;
+    border-radius: 10px;
+    z-index: 1;
+    transform: scale(1) translate(50%, -50%);
+    transform-origin: 100% 0% 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.badge-primary {
+    .badge__badge-content {
+      background-color: $primary;
+    }
+  }
+
+  &.badge-secondary {
+    .badge__badge-content {
+      background-color: $secondary;
+    }
+  }
+
+  &.badge-tertiary {
+    .badge__badge-content {
+      background-color: $tertiary;
+    }
+  }
+
+  &.badge-grey {
+    .badge__badge-content {
+      background-color: $grey;
+    }
+  }
+
+  &.badge-grey-light {
+    .badge__badge-content {
+      background-color: $grey-light;
+    }
+  }
+
+  &.badge-white {
+    .badge__badge-content {
+      background-color: $white;
+    }
+  }
+
+  &.badge-black {
+    .badge__badge-content {
+      background-color: $black;
+    }
+  }
+
+  &.badge-success {
+    .badge__badge-content {
+      background-color: $success;
+    }
+  }
+
+  &.badge-info {
+    .badge__badge-content {
+      background-color: $info;
+    }
+  }
+
+  &.badge-warning {
+    .badge__badge-content {
+      background-color: $warning;
+    }
+  }
+
+  &.badge-danger {
+    .badge__badge-content {
+      background-color: $danger;
+    }
+  }
+
+  &.badge-content-primary {
+    .badge__content {
+      color: $primary;
+    }
+  }
+
+  &.badge-content-secondary {
+    .badge__content {
+      color: $secondary;
+    }
+  }
+
+  &.badge-content-tertiary {
+    .badge__content {
+      color: $tertiary;
+    }
+  }
+
+  &.badge-content-grey {
+    .badge__content {
+      color: $grey;
+    }
+  }
+
+  &.badge-content-grey-light {
+    .badge__content {
+      color: $grey-light;
+    }
+  }
+
+  &.badge-content-white {
+    .badge__content {
+      color: $white;
+    }
+  }
+
+  &.badge-content-black {
+    .badge__content {
+      color: $black;
+    }
+  }
+
+  &.badge-content-success {
+    .badge__content {
+      color: $success;
+    }
+  }
+
+  &.badge-content-info {
+    .badge__content {
+      color: $info;
+    }
+  }
+
+  &.badge-content-warning {
+    .badge__content {
+      color: $warning;
+    }
+  }
+
+  &.badge-content-danger {
+    .badge__content {
+      color: $danger;
+    }
+  }
+}

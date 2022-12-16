@@ -1,0 +1,37 @@
+@import '@scss/mixins';
+
+.products__list {
+  display: flex;
+  margin: 0 -5px;
+  flex-wrap: wrap;
+
+  .column {
+    width: 20%;
+    padding: 0 5px;
+    margin-bottom: 10px;
+  }
+}
+
+@include mobile {
+  .products__list {
+    .column {
+      width: 100%;
+    }
+  }
+}
+
+@include tablet {
+  .products__list {
+    .column {
+      width: 33.3333%;
+    }
+  }
+}
+
+@include small-desktop {
+  .products__list {
+    .column {
+      width: 25%;
+    }
+  }
+}

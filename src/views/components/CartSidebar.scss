@@ -1,0 +1,39 @@
+@import '@scss/theme-variables';
+@import '@scss/mixins';
+
+.cart-sidebar {
+  display: flex;
+  width: calc(30% - 15px);
+  padding: 10px;
+  background: $white;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-width: 100%;
+  margin-left: 15px;
+  border-radius: 4px;
+
+  .cart-sidebar__section {
+    display: flex;
+    width: 100%;
+    padding: 25px 5px;
+    border-bottom: 1px solid $grey-light;
+
+    .cart-sidebar__section-title {
+      width: 100%;
+      margin: 0;
+    }
+
+    &.total {
+      border: 0;
+      margin-top: auto;
+    }
+  }
+}
+
+@include mobile {
+  .cart-sidebar {
+    width: 100%;
+    margin-top: 15px;
+    margin-left: 0;
+  }
+}
