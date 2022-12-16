@@ -2,6 +2,9 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { fileURLToPath, URL } from 'node:url';
 
+const isProduction = !!(process.env.NODE_ENV && process.env.NODE_ENV === 'production');
+const baseUrl = !isProduction ? '/' : `/`;
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
@@ -24,4 +27,5 @@ export default defineConfig({
       '@api': fileURLToPath(new URL('./src/api', import.meta.url)),
     },
   },
+  base: baseUrl,
 });

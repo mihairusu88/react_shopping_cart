@@ -1,0 +1,49 @@
+@import '@scss/theme-variables';
+
+.category-card-variant-1 {
+  position: relative;
+  min-width: 120px;
+  text-align: center;
+  border-radius: 4px;
+  transition: all 250ms ease-in-out;
+  z-index: 1;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    border: 1px solid $white;
+    background-color: $white;
+    content: '';
+    border-radius: 4px;
+    z-index: -1;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  a {
+    display: block;
+    padding: 28px 12px;
+    color: $black;
+    text-decoration: none;
+    outline: none;
+
+    h6 {
+      line-height: 24px;
+      margin-bottom: 0;
+      font-size: 16px;
+      text-transform: capitalize;
+    }
+
+    svg {
+      font-size: 50px;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 2px 15px 0 rgba($primary, 0.2);
+  }
+}

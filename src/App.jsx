@@ -5,8 +5,10 @@ import { persistor, store } from '@store/index';
 import { PersistGate } from 'redux-persist/integration/react';
 
 function App() {
+  const baseUrl = import.meta.env.BASE_URL;
+
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={baseUrl}>
       <Provider store={store}>
         <PersistGate persistor={persistor}>
           <div className="app">

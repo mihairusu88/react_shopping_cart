@@ -6,7 +6,7 @@
   padding: 6px 16px;
   border: 0;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   min-width: 65px;
   text-decoration: none;
   cursor: pointer;
@@ -40,12 +40,84 @@
     }
   }
 
+  &.btn-tertiary {
+    background-color: $tertiary;
+    color: $white;
+
+    &:hover {
+      background-color: darken($tertiary, 5%);
+    }
+  }
+
+  &.btn-grey {
+    background-color: $grey;
+    color: $white;
+
+    &:hover {
+      background-color: darken($grey, 5%);
+    }
+  }
+
+  &.btn-grey-light {
+    background-color: $grey-light;
+    color: $white;
+
+    &:hover {
+      background-color: darken($grey-light, 5%);
+    }
+  }
+
+  &.btn-black {
+    background-color: $black;
+    color: $white;
+
+    &:hover {
+      background-color: darken($black, 5%);
+    }
+  }
+
   &.btn-white {
     background-color: $white;
     color: $primary;
 
     &:hover {
       background-color: darken($white, 5%);
+    }
+  }
+
+  &.btn-success {
+    background-color: $success;
+    color: $white;
+
+    &:hover {
+      background-color: darken($success, 5%);
+    }
+  }
+
+  &.btn-info {
+    background-color: $info;
+    color: $white;
+
+    &:hover {
+      background-color: darken($info, 5%);
+    }
+  }
+
+  &.btn-warning {
+    background-color: $warning;
+    color: $white;
+
+    &:hover {
+      background-color: darken($warning, 5%);
+    }
+  }
+
+  &.btn-danger {
+    background-color: $danger;
+    color: $white;
+
+    &:hover {
+      background-color: darken($danger, 5%);
     }
   }
 }
@@ -73,6 +145,50 @@
     }
   }
 
+  &.btn-tertiary {
+    border: 1px solid $tertiary;
+    background-color: transparent;
+    color: $tertiary;
+
+    &:hover {
+      color: darken($tertiary, 5%);
+      border-color: darken($tertiary, 5%);
+    }
+  }
+
+  &.btn-grey {
+    border: 1px solid $grey;
+    background-color: transparent;
+    color: $grey;
+
+    &:hover {
+      color: darken($grey, 5%);
+      border-color: darken($grey, 5%);
+    }
+  }
+
+  &.btn-grey-light {
+    border: 1px solid $grey-light;
+    background-color: transparent;
+    color: $grey-light;
+
+    &:hover {
+      color: darken($grey-light, 5%);
+      border-color: darken($grey-light, 5%);
+    }
+  }
+
+  &.btn-black {
+    border: 1px solid $black;
+    background-color: transparent;
+    color: $black;
+
+    &:hover {
+      color: darken($black, 5%);
+      border-color: darken($black, 5%);
+    }
+  }
+
   &.btn-white {
     border: 1px solid $white;
     background-color: transparent;
@@ -81,6 +197,50 @@
     &:hover {
       color: darken($white, 5%);
       border-color: darken($white, 5%);
+    }
+  }
+
+  &.btn-success {
+    border: 1px solid $success;
+    background-color: transparent;
+    color: $success;
+
+    &:hover {
+      color: darken($success, 5%);
+      border-color: darken($success, 5%);
+    }
+  }
+
+  &.btn-info {
+    border: 1px solid $info;
+    background-color: transparent;
+    color: $info;
+
+    &:hover {
+      color: darken($info, 5%);
+      border-color: darken($info, 5%);
+    }
+  }
+
+  &.btn-warning {
+    border: 1px solid $warning;
+    background-color: transparent;
+    color: $warning;
+
+    &:hover {
+      color: darken($warning, 5%);
+      border-color: darken($warning, 5%);
+    }
+  }
+
+  &.btn-danger {
+    border: 1px solid $danger;
+    background-color: transparent;
+    color: $danger;
+
+    &:hover {
+      color: darken($danger, 5%);
+      border-color: darken($danger, 5%);
     }
   }
 }

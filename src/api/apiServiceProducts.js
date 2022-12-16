@@ -1,20 +1,45 @@
+import { createApi } from '@reduxjs/toolkit/query/react';
 import apiConstants from '@utils/constants/api';
-import { fetchAPI } from '@utils/api';
+import { axiosBaseQuery } from '@utils/api';
 
-const defaultParams = { id: null, limit: 20, sort: 'desc' };
+const defaultParams = { id: null, limit: 20, skip: 0 };
 
-let api = {
-  getCancelRequest: fetchAPI.getCancelRequest,
-  get: ({ id, limit } = defaultParams) => {
-    const url = id ? `${apiConstants.BASE_URL}/products/${id}` : `${apiConstants.BASE_URL}/products`;
-    const params = id
-      ? null
-      : {
-          limit,
-        };
-
-    return fetchAPI.get(url, params);
+export const apiServiceProducts = createApi({
+  baseQuery: axiosBaseQuery({
+    baseUrl: apiConstants.BASE_URL,
+  }),
+  tagTypes: ['Products'],
+  endpoints(build) {
+    return {
+      getProducts: build.query({
+        query: ({ id, limit, skip } = defaultParams) => ({
+          url: '/products',
+          method: 'get',
+          params: { id, limit, skip },
+        }),
+      }),
+      getProduct: build.query({
+        query: ({ id } = defaultParams) => ({
+          url: `/products/${id}`,
+          method: 'get',
+        }),
+      }),
+      getProductsCategories: build.query({
+        query: () => ({
+          url: '/products/categories',
+          method: 'get',
+        }),
+      }),
+      getCategoryProducts: build.query({
+        query: ({ category } = defaultParams) => ({
+          url: `/products/category/${category}`,
+          method: 'get',
+        }),
+        providesTags: () => ['CategoryProducts'],
+      }),
+    };
   },
-};
+});
 
-export default api;
+export const { useGetProductsQuery, useGetProductQuery, useGetProductsCategoriesQuery, useGetCategoryProductsQuery } =
+  apiServiceProducts;

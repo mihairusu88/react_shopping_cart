@@ -1,11 +1,18 @@
 import './ProductCardVariant3.scss';
+import { useState } from 'react';
 import { priceFormat } from '@utils/number';
 import { MdClose } from 'react-icons/md';
 import Button from '@components/buttons/Button';
 import QuantityControls from '@components/controls/QuantityControls';
+import { Rating } from 'react-simple-star-rating';
 
 const ProductCardVariant3 = (props) => {
   const { product } = props;
+  const [isLoadingImage, setIsLoadingImage] = useState(true);
+
+  const onLoadImage = () => {
+    setIsLoadingImage(false);
+  };
 
   const onClickRemoveButton = () => {
     !props.onClickRemoveButton || props.onClickRemoveButton(product.id);
@@ -20,15 +27,24 @@ const ProductCardVariant3 = (props) => {
       <div className="content">
         <div className="image">
           <div className="image__content">
-            <img src={product.thumbnail} alt={product.title} />
+            {isLoadingImage && <div className="image-loading-skeleton"></div>}
+            <img src={product.thumbnail} alt={product.title} onLoad={onLoadImage} />
           </div>
         </div>
         <div className="details">
+          <div className="rating">
+            <Rating readonly allowFraction size={15} initialValue={product.rating} />
+          </div>
           <h3 className="title">{product.title}</h3>
           <span className="price">{priceFormat({ value: product.price })}</span>
         </div>
         <div className="quantity">
-          <QuantityControls quantity={product.quantity} onChange={onChangeQuantity} />
+          <QuantityControls
+            buttonsColor="secondary"
+            buttonsVariant="contained"
+            quantity={product.quantity}
+            onChange={onChangeQuantity}
+          />
         </div>
       </div>
       <div className="actions">

@@ -2,9 +2,33 @@
 @import '@scss/mixins';
 
 .product-card-variant-1 {
+  display: flex;
+  position: relative;
+  border: 2px solid transparent;
   background: $white;
   border-radius: 4px;
   min-height: 395px;
+  transition: all 250ms ease-in-out;
+  flex-direction: column;
+  overflow: hidden;
+
+  .added-in-cart-badge {
+    display: flex;
+    position: absolute;
+    top: -10px;
+    right: 0;
+    height: 60px;
+    width: 60px;
+    background: $white;
+    z-index: 2;
+    border-radius: 9999px;
+    align-items: center;
+    justify-content: center;
+
+    .badge {
+      margin-top: 10px;
+    }
+  }
 
   .content {
     display: flex;
@@ -81,9 +105,16 @@
       }
     }
 
+    .rating {
+      display: flex;
+      margin-top: 10px;
+      justify-content: flex-start;
+    }
+
     .title {
       line-height: 19px;
       padding-right: 20px;
+      margin-top: 5px;
       margin-bottom: 12px;
       color: $tertiary;
       font-size: 16px;
@@ -91,6 +122,11 @@
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
     }
 
     .description {
@@ -105,20 +141,50 @@
         margin: 0;
       }
     }
+
+    .category {
+      display: flex;
+      padding: 5px;
+      border: 1px solid rgba($grey, 0.6);
+      margin: 0 auto 10px 0;
+      color: darken($grey, 10%);
+      font-size: 12px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4px;
+
+      svg {
+        margin-right: 10px;
+      }
+
+      span {
+        line-height: 1.2;
+      }
+    }
   }
 
   .actions {
     display: flex;
     padding: 0 10px 10px;
+    margin-top: auto;
     align-items: center;
     justify-content: space-between;
 
     .price {
       line-height: 19px;
-      color: $primary;
+      color: $secondary;
       font-size: 16px;
       font-weight: 500;
     }
+  }
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 2px 15px 0 rgba($primary, 0.2);
+  }
+
+  &.product-card-variant-1-added-in-cart {
+    border-color: rgba($grey, 0.5);
   }
 }
 

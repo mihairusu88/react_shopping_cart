@@ -1,0 +1,41 @@
+@import '@scss/theme-variables';
+
+.recently-viewed {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+
+  .recently-viewed__header {
+    display: flex;
+    justify-content: space-between;
+
+    h3 {
+      margin: 0;
+      flex-grow: 1;
+    }
+
+    .btn {
+      padding: 3px 12px;
+      font-size: 12px;
+    }
+  }
+
+  .recently-viewed__no-history {
+    margin-top: 10px;
+  }
+  
+  .recently-viewed__content {
+    position: relative;
+    width: 100%;
+  
+    .swiper {
+      padding: 20px 0 40px;
+  
+      .swiper-pagination {
+        .swiper-pagination-bullet-active {
+          background: $primary;
+        }
+      }
+    }
+  }
+}

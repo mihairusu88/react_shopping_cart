@@ -1,0 +1,134 @@
+@import '@scss/theme-variables';
+@import '@scss/mixins';
+
+.featured-products {
+  display: flex;
+  width: 100%;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+
+  h3 {
+    width: 100%;
+  }
+  
+  .featured-products__features {
+    display: flex;
+    width: 20%;
+    padding: 15px;
+    border: 1px solid $grey-light;
+    margin-right: 10px;
+    background-color: $white;
+    flex-wrap: wrap;
+
+    .features__item {
+      display: flex;
+      width: 100%;
+      padding: 0 0 15px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid $grey-light;
+
+      .features__item-icon {
+        margin-right: 15px;
+        margin-left: 25px;
+
+        svg {
+          color: $primary;
+          font-size: 34px;
+        }
+      }
+
+      .features__item-content {
+        h6 {
+          margin-top: 0;
+          margin-bottom: 5px;
+          color: $black;
+          font-size: 16px;
+          font-weight: 500;
+        }
+
+        p {
+          margin: 0;
+          color: $grey;
+          font-size: 12px;
+        }
+      }
+
+      &:last-child {
+        padding: 0;
+        border: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .featured-products__products {
+    width: calc(80% - 10px);
+  }
+}
+
+@include mobile {
+  .featured-products {
+    .featured-products__features {
+      width: 100%;
+      margin: 0 0 15px;
+
+      .features__item {
+        flex-direction: column;
+        align-items: center;
+
+        .features__item-icon {
+          margin: 0 0 15px;
+        }
+
+        .features__item-content {
+          text-align: center;
+        }
+      }
+    }
+
+    .featured-products__products {
+      width: 100%;
+    }
+  }
+}
+
+@include tablet {
+  .featured-products {
+    .featured-products__features {
+      width: 100%;
+      margin: 0 0 15px;
+
+      .features__item {
+        position: relative;
+        width: 20%;
+        border: 0;
+        margin: 0;
+        flex-direction: column;
+        align-items: center;
+
+        .features__item-icon {
+          margin: 0 0 15px;
+        }
+
+        .features__item-content {
+          text-align: center;
+        }
+
+        &:not(:last-child)::after {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          height: calc(100% - 30px);
+          width: 1px;
+          background: $grey-light;
+          content: '';
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    .featured-products__products {
+      width: 100%;
+    }
+  }
+}

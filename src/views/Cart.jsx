@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import CartProductList from './components/Products/CartProductList';
-import CartSidebar from './components/CartSidebar';
+import CartSidebar from './components/Cart/CartSidebar';
 import Alert from '@components/alerts/Alert';
 import { setProductQuantity, removeProduct } from '@store/cart';
 
@@ -30,7 +30,7 @@ const Cart = () => {
 
   return (
     <div className="cart">
-      <h2 className="page-title">Shopping Cart</h2>
+      <h2 className="text-center">Shopping Cart</h2>
       <div className="container">
         {!cart.items.length && (
           <Alert className="cart__no-products" type="info" color="primary">
