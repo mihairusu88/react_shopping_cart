@@ -24,7 +24,7 @@ import {
 } from 'react-icons/fc';
 
 const CategoryCardVariant1 = ({ category = null }) => {
-  const categoryName = category.split('-').join(' ');
+  const categoryName = category.slug.split('-').join(' ');
 
   return (
     <div className="category-card-variant-1">

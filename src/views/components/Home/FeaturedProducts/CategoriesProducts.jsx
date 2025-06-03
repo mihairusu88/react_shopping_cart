@@ -23,7 +23,7 @@ const CategoriesProducts = ({ categories = null }) => {
   const [activeCategory, setActiveCategory] = useState(0);
   const [categoryProducts, setCategoryProducts] = useState([]);
   const { data, isLoading, isSuccess, isFetching, refetch } = useGetCategoryProductsQuery({
-    category: categories[activeCategory],
+    category: categories[activeCategory].slug,
   });
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const CategoriesProducts = ({ categories = null }) => {
     if (isSuccess && !isFetching) {
       setCategoryProducts([...categoryProducts, { category: data.products[0].category, products: data.products }]);
     }
-  }, [isSuccess, isFetching]);
+  }, [isSuccess, isFetching, data]);
 
   return (
     <div className="featured-categories-products">
@@ -52,7 +52,7 @@ const CategoriesProducts = ({ categories = null }) => {
             })}
             key={index}
           >
-            <h6>{category.split('-').join(' ')}</h6>
+            <h6>{category.slug.split('-').join(' ')}</h6>
             <CategoryProductsLength products={categoryProducts} category={categories[activeCategory]} />
           </Link>
         ))}
